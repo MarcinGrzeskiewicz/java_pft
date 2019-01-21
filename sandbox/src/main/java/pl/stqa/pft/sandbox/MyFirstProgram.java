@@ -17,8 +17,12 @@ public class MyFirstProgram {
 
     Point P1 = new Point (2, 5);
     Point P2 = new Point (5, 9);
-    System.out.println(Distance(P1,P2));
+    System.out.println("Odległość = " + Distance(P1,P2));
 
+
+    Point p1 = new Point (2, 1);
+    Point p2 = new Point (5, 5);
+    System.out.println("Odległość między dwoma punktami (" + p1.x +" ; "+ p1.y +") i (" + p2.x +" ; "+p2.y+ ") = " + (Distance(P1,P2)));
   }
 
   public static void hello(String somebody) {
