@@ -1,5 +1,6 @@
 package pl.stqa.pft.sandbox;
 
+
 import java.sql.SQLOutput;
 
 public class MyFirstProgram {
@@ -15,8 +16,9 @@ public class MyFirstProgram {
     Rectangle r = new Rectangle(4, 6);
     System.out.println("Powierzchnia prostokąta o boku " + r.a + " i " + r.b + " = " + r.area());
 
-    Point p = new Point (2, 1,6, 4);
-    System.out.println("Odległość między dwoma punktami (" + p.x1 +" ; "+ p.y1 +") i (" + p.x2 +" ; "+p.y2+ ") = " + p.Distance());
+    Point p2 = new Point (5, 5);
+    Point p1 = new Point (2, 1);
+     System.out.println("Odległość między dwoma punktami (" + p1.x +" ; "+ p1.y +") i (" + p2.x +" ; "+p2.y+ ") = " + p1.Distance(p2));
   }
 
   public static void hello(String somebody) {
