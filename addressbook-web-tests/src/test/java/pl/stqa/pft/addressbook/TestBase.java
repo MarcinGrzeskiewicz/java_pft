@@ -93,6 +93,7 @@ public class TestBase {
     wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
   }
 
+
   protected void fillContactform(ContactData contactData) {
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
@@ -101,9 +102,22 @@ public class TestBase {
     wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
     wd.findElement(By.name("nickname")).clear();
     wd.findElement(By.name("nickname")).sendKeys(contactData.getNickname());
+
   }
 
   protected void initNewContact() {
     wd.findElement(By.linkText("add new")).click();
+  }
+
+  protected void fillOtherContactForm(OtherContactData OtherContactData) {
+    wd.findElement(By.name("address")).click();
+    wd.findElement(By.name("address")).clear();
+    wd.findElement(By.name("address")).sendKeys(OtherContactData.getAddress());
+    wd.findElement(By.name("mobile")).click();
+    wd.findElement(By.name("mobile")).clear();
+    wd.findElement(By.name("mobile")).sendKeys(OtherContactData.getMobile());
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).clear();
+    wd.findElement(By.name("email")).sendKeys(OtherContactData.getMail());
   }
 }
