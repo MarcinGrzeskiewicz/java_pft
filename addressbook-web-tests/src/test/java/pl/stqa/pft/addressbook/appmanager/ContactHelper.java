@@ -5,41 +5,32 @@ import org.openqa.selenium.WebDriver;
 import pl.stqa.pft.addressbook.model.ContactData;
 import pl.stqa.pft.addressbook.model.OtherContactData;
 
-public class ContactHelper {
-  private WebDriver wd;
+public class ContactHelper extends HelperBase {
 
   public ContactHelper(WebDriver wd) {
-    this.wd = wd;
+    super (wd);
   }
 
   public void createContact() {
-    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+    click(By.xpath("(//input[@name='submit'])[2]"));
   }
 
   public void fillContactform(ContactData contactData) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getName());
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    wd.findElement(By.name("nickname")).clear();
-    wd.findElement(By.name("nickname")).sendKeys(contactData.getNickname());
+    type(By.name("firstname"), contactData.getName());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("nickname"), contactData.getNickname());
+
 
   }
 
   public void initNewContact() {
-    wd.findElement(By.linkText("add new")).click();
+    click(By.linkText("add new"));
   }
 
   public void fillOtherContactForm(OtherContactData OtherContactData) {
-    wd.findElement(By.name("address")).click();
-    wd.findElement(By.name("address")).clear();
-    wd.findElement(By.name("address")).sendKeys(OtherContactData.getAddress());
-    wd.findElement(By.name("mobile")).click();
-    wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys(OtherContactData.getMobile());
-    wd.findElement(By.name("email")).click();
-    wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys(OtherContactData.getMail());
+    type(By.name("address"), OtherContactData.getAddress());
+    type(By.name("mobile"), OtherContactData.getMobile());
+    type(By.name("email"), OtherContactData.getMail());
+
   }
 }
