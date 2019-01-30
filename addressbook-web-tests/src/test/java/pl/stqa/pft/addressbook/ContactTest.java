@@ -9,8 +9,7 @@ public class ContactTest extends TestBase {
   public void testContact() throws Exception {
 
     initNewContact();
-    fillContactform(new ContactData("Marcin", "Grzeskiewicz", "Maniek"));
-    fillOtherContactForm(new OtherContactData("Warszawa", "123-456-789", "marcin@marcin.pl"));
+    fillContactform(new ContactData("Marcin", "Grzeskiewicz", "Maniek", "Warszawa", "123-456-789", "marcin@marcin.pl"));
     createContact();
   }
 }
