@@ -21,4 +21,10 @@ public class NavigationHelper extends HelperBase {
 
     public void initUpdate(){click(By.xpath("//div[@id='content']/form/input[22]"));}
 
+    public void checkCheckbox(){click(By.xpath("//tr[4]/td/input"));}
+
+    public void initDelete(){click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));}
+
+    public void initOK(){wd.switchTo().alert().accept();}
+
   }
