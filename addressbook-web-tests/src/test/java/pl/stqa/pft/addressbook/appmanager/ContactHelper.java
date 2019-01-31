@@ -23,9 +23,7 @@ public class ContactHelper extends HelperBase {
 
   }
 
-  public void initNewContact() {
-    click(By.linkText("add new"));
-  }
+  public void initNewContact() { click(By.linkText("add new")); }
 
   public void fillOtherContactForm(OtherContactData OtherContactData) {
     type(By.name("address"), OtherContactData.getAddress());
