@@ -11,7 +11,7 @@ public class ContactEditTest extends TestBase {
 
     app.getNavigationHelper().initHomeView();
     app.getNavigationHelper().initContactEdit();
-    app.getContactHelper().fillContactform(new ContactData("Marcinek", "Grzeskiewiczek", "Manieczek", "Warszawka", "123-456-000", "MarMarmarcin@marcin.pl"));
+    app.getContactHelper().fillContactform(new ContactData("Marcinek", "Grzeskiewiczek", "Manieczek", "Warszawka", "123-456-000", "MarMarmarcin@marcin.pl", null), false);
     app.getNavigationHelper().initUpdate();
   }
 
