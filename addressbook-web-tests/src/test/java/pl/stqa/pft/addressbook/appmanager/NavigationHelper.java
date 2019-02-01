@@ -17,11 +17,11 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("home"));
 }
 
-    public void initContactEdit() {click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img")); }
+public void initContactEdit() {click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img")); }
 
     public void initUpdate(){click(By.xpath("//div[@id='content']/form/input[22]"));}
 
-    public void checkCheckbox(){click(By.xpath("//tr[4]/td/input"));}
+    public void checkCheckbox(){click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));}
 
     public void initDelete(){click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));}
 
