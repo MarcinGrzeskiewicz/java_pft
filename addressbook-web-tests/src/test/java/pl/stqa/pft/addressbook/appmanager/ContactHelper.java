@@ -16,6 +16,10 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("(//input[@name='submit'])[2]"));
   }
 
+  public void clickHomePage() {
+    click(By.linkText("home page"));
+  }
+
   public void fillContactform(ContactData contactData) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getLastname());
@@ -34,9 +38,14 @@ public class ContactHelper extends HelperBase {
     initNewContact();
     fillContactform(contactData);
     createContact();
+    clickHomePage();
   }
 
   public boolean isThereAContact() {
     return isElementPresent(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
+  }
+
+  public int getContactCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 }
