@@ -16,7 +16,7 @@ public class ContactDeleteTest extends TestBase {
               "Maniek", "Warszawa", "123-456-789", "marcin@marcin.pl", "test1"));
     }
     app.getNavigationHelper().initHomeView();
-    app.getNavigationHelper().checkCheckbox();
+    app.getNavigationHelper().checkCheckbox(before - 1);
     app.getNavigationHelper().initDelete();
     app.getNavigationHelper().initOK();
     int after = app.getContactHelper().getContactCount();

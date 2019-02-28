@@ -25,16 +25,16 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("home"));
   }
 
-  public void initContactEdit() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img"));
+  public void initContactEdit(int index) {
+    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
   }
 
   public void initUpdate() {
     click(By.xpath("//div[@id='content']/form/input[22]"));
   }
 
-  public void checkCheckbox() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
+  public void checkCheckbox(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
   }
 
   public void initDelete() {
