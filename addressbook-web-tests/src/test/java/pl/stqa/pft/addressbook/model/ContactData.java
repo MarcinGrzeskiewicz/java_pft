@@ -1,5 +1,7 @@
 package pl.stqa.pft.addressbook.model;
 
+import java.util.Objects;
+
 public class ContactData {
   private final String name;
   private final String lastname;
@@ -43,5 +45,8 @@ public class ContactData {
     return mail;
   }
 
-  public String getGroup() { return group; }
+  public String getGroup() {
+    return group;
+  }
+
 }

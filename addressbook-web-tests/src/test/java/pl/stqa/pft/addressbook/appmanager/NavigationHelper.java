@@ -34,7 +34,7 @@ public class NavigationHelper extends HelperBase {
   }
 
   public void checkCheckbox(int index) {
-    wd.findElements(By.name("selected[]")).get(index).click();
+   wd.findElements(By.name("selected[]")).get(index).click();
   }
 
   public void initDelete() {
