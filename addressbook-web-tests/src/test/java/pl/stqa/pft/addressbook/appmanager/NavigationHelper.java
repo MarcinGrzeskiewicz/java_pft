@@ -9,7 +9,7 @@ public class NavigationHelper extends HelperBase {
     super(wd);
   }
 
-  public void gotoGroupPage() {
+  public void groupPage() {
     if (isElementPresent(By.tagName("h1"))
             && wd.findElement(By.tagName("h1")).getText().equals("Groups")
             && isElementPresent(By.name("new"))) {
@@ -18,26 +18,26 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("groups"));
   }
 
-  public void initHomeView() {
+  public void homeview() {
     if (isElementPresent(By.id("maintable"))) {
       return;
     }
     click(By.linkText("home"));
   }
 
-  public void initContactEdit(int index) {
+  public void edit(int index) {
     wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
   }
 
-  public void initUpdate() {
+  public void update() {
     click(By.xpath("//div[@id='content']/form/input[22]"));
   }
 
-  public void checkCheckbox(int index) {
+  public void checkbox(int index) {
    wd.findElements(By.name("selected[]")).get(index).click();
   }
 
-  public void initDelete() {
+  public void delete() {
     click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
   }
 

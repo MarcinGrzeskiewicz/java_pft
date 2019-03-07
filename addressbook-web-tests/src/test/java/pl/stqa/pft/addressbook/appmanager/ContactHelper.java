@@ -18,7 +18,7 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("(//input[@name='submit'])[2]"));
   }
 
-  public void clickHomePage() {
+  public void homepage() {
     click(By.linkText("home page"));
   }
 
@@ -40,7 +40,7 @@ public class ContactHelper extends HelperBase {
     initNewContact();
     fillContactform(contactData);
     createContact();
-    clickHomePage();
+    homepage();
   }
 
   public boolean isThereAContact() {
@@ -51,7 +51,7 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> getContactList() {
+  public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for(WebElement element : elements) {

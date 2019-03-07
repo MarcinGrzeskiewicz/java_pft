@@ -9,14 +9,14 @@ import java.util.List;
 
 public class ContactTest extends TestBase {
 
-
   @Test
   public void testContact() throws Exception {
-    List<ContactData> before = app.getContactHelper().getContactList();
+    app.goTo().homeview();
+    List<ContactData> before = app.contact().list();
     ContactData contact = new ContactData("Ola", "Grzeskiewicz", "Maniek",
             "Warszawa", "123-456-789", "marcin@marcin.pl", "test1");
-    app.getContactHelper().createNewContact(contact);
-    List<ContactData> after = app.getContactHelper().getContactList();
+    app.contact().createNewContact(contact);
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() + 1);
 
     contact.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
