@@ -19,7 +19,7 @@ public class ContactEditTest extends TestBase {
     app.goTo().homeview();
     if (app.contact().all().size() == 0) {
       app.contact().createNewContact(new ContactData().withName("Ola").withLastname("Grzeskiewicz").withNickname("Maniek")
-              .withAddress("Warszawa").withMobile("123-456-789").withMail("marcin@marcin.pl").withGroup("test1"));
+              .withAddress("Warszawa").withMobilePhone("123-456-789").withMail("marcin@marcin.pl").withGroup("test1"));
     }
   }
 
@@ -31,7 +31,7 @@ public class ContactEditTest extends TestBase {
     app.goTo().editById(modifiedContact.getId());
     ContactData contact = new ContactData()
             .withId(modifiedContact.getId()).withName("Marcinek").withLastname("Grzeskiewiczek")
-            .withNickname("Manieczek").withAddress("Warszawka").withMobile("123-456-000")
+            .withNickname("Manieczek").withAddress("Warszawka").withMobilePhone("123123123")
             .withMail("MarMarmarcin@marcin.pl");
     app.contact().fillContactform(contact);
     app.goTo().update();
