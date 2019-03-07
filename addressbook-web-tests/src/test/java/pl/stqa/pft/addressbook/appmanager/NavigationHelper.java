@@ -44,5 +44,10 @@ public class NavigationHelper extends HelperBase {
   public void initOK() {
     wd.switchTo().alert().accept();
   }
-
+  public void deleteContact(int index) {
+    checkbox(index);
+    delete();
+    initOK();
+    homeview();
+  }
 }

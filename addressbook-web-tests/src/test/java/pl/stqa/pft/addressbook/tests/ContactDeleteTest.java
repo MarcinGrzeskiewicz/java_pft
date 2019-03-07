@@ -22,14 +22,13 @@ public class ContactDeleteTest extends TestBase {
     app.goTo().homeview();
     List<ContactData> before = app.contact().list();
     int index = before.size() -1;
-    app.goTo().checkbox(index);
-    app.goTo().delete();
-    app.goTo().initOK();
-    app.goTo().homeview();
+    app.goTo().deleteContact(index);
     List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() - 1);
 
     before.remove(index);
     Assert.assertEquals(before, after);
   }
+
+
 }
