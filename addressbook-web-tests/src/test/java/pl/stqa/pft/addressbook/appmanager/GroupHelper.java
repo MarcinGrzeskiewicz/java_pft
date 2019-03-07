@@ -58,12 +58,20 @@ public class GroupHelper extends HelperBase {
     returnGroupPage();
   }
 
+  public void modifyGroup(int index, GroupData group) {
+    selectGroup(index);
+    initGroupModification();
+    fillGroupForm(group);
+    submitGroupModification();
+    returnGroupPage();
+  }
+
   public boolean isThereAGroup() {
     return isElementPresent(By.name("selected[]"));
   }
 
   public int getGroupCount() {
-   return wd.findElements(By.name("selected[]")).size();
+    return wd.findElements(By.name("selected[]")).size();
   }
 
   public List<GroupData> getGroupList() {
@@ -77,4 +85,5 @@ public class GroupHelper extends HelperBase {
     }
     return groups;
   }
+
 }
