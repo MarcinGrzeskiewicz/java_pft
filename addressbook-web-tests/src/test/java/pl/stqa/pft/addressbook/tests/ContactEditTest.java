@@ -3,13 +3,10 @@ package pl.stqa.pft.addressbook.tests;
 
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
 import pl.stqa.pft.addressbook.model.Contacts;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -39,8 +36,8 @@ public class ContactEditTest extends TestBase {
     app.contact().fillContactform(contact);
     app.goTo().update();
     app.contact().homepage();
+    assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.contact().all();
-    assertEquals(after.size(), before.size());
-    MatcherAssert.assertThat(after, CoreMatchers.equalTo(before. without(modifiedContact).withAdded(contact)));
+    assertThat(after, equalTo(before. without(modifiedContact).withAdded(contact)));
   }
 }
