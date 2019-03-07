@@ -2,6 +2,7 @@ package pl.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pl.stqa.pft.addressbook.model.ContactData;
 
 public class NavigationHelper extends HelperBase {
 
@@ -25,16 +26,16 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("home"));
   }
 
-  public void edit(int index) {
-    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+  public void editById(int id) {
+    wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
   }
 
   public void update() {
     click(By.xpath("//div[@id='content']/form/input[22]"));
   }
 
-  public void checkbox(int index) {
-   wd.findElements(By.name("selected[]")).get(index).click();
+    public void checkboxById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
   public void delete() {
@@ -44,8 +45,9 @@ public class NavigationHelper extends HelperBase {
   public void initOK() {
     wd.switchTo().alert().accept();
   }
-  public void deleteContact(int index) {
-    checkbox(index);
+
+  public void deleteContact(ContactData contact) {
+    checkboxById(contact.getId());
     delete();
     initOK();
     homeview();
