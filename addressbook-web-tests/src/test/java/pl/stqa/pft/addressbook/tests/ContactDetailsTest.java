@@ -30,7 +30,7 @@ public class ContactDetailsTest extends TestBase {
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
     String contactInfoFromDetailsForm = app.contact().infoFromDetailsForm(contact);
 
-    assertThat((contactInfoFromDetailsForm), equalTo(mergeDetails(contactInfoFromEditForm)));
+    assertThat((cleaned(contactInfoFromDetailsForm)), equalTo(mergeDetails(contactInfoFromEditForm)));
 
   }
 
@@ -45,6 +45,8 @@ public class ContactDetailsTest extends TestBase {
   }
 
   public static String cleaned(String details) {
-    return details.replaceAll("\\s", "").replaceAll("[-()]", "").replaceAll("\n", "");
+    return details.replaceAll("\\s", "").replaceAll("[-()]", "")
+            .replaceAll("\n", "")
+            .replaceAll("[H: W:]", "");
   }
 }
