@@ -17,6 +17,7 @@ public class ContactData {
   private String allEmails;
   private String group;
   private String allPhones;
+  private String Details;
 
   public void setId(int id) {
     this.id = id;
