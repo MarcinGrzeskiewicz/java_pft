@@ -228,11 +228,21 @@ public class ContactData {
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(name, that.name) &&
-            Objects.equals(lastname, that.lastname);
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(nickname, that.nickname) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(homePhone, that.homePhone) &&
+            Objects.equals(mobilePhone, that.mobilePhone) &&
+            Objects.equals(workPhone, that.workPhone) &&
+            Objects.equals(email, that.email) &&
+            Objects.equals(email2, that.email2) &&
+            Objects.equals(email3, that.email3) &&
+            Objects.equals(group, that.group) &&
+            Objects.equals(photo, that.photo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, lastname);
+    return Objects.hash(id, name, lastname, nickname, address, homePhone, mobilePhone, workPhone, email, email2, email3, group, photo);
   }
 }

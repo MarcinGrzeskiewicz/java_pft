@@ -34,8 +34,6 @@ public class ContactEditTest extends TestBase {
     app.contact().fillContactform(contact);
     app.goTo().update();
     app.contact().homepage();
-    assertThat(app.contact().count(), equalTo(before.size()));
-    Contacts after = app.db().contacts();
-    assertThat(after, equalTo(before. without(modifiedContact).withAdded(contact)));
+    verifyContactListInUI();
   }
 }
