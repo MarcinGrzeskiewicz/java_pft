@@ -2,6 +2,7 @@ package pl.stqa.pft.mantis.appmanager;
 
 import org.omg.CORBA.NameValuePair;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
