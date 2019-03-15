@@ -1,11 +1,13 @@
 package pl.stqa.pft.mantis.tests;
 
+
 import org.testng.annotations.Test;
 import pl.stqa.pft.mantis.appmanager.HttpSession;
 
 import java.io.IOException;
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
+
 
 public class LoginTests extends TestBase {
 
