@@ -61,8 +61,6 @@ public class ContactTest extends TestBase {
     Contacts before = app.db().contacts();
     app.contact().createNewContact(contact);
     assertThat(app.contact().count(), equalTo(before.size() + 1));
-    Contacts after = app.db().contacts();
-    assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
     verifyContactListInUI();
   }
 }
